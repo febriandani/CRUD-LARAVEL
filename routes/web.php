@@ -48,3 +48,5 @@ Route::get('/pegawai/hapus/{id}', [PegawaiController::class, 'hapus']);
 Route::post('/pegawai/store', [PegawaiController::class, 'store']);
 //untuk proses update data
 Route::post('/pegawai/update', [PegawaiController::class, 'update']);
+//untuk proses cari data
+Route::get('/pegawai/cari', [PegawaiController::class, 'cari']);
