@@ -65,13 +65,9 @@ class PegawaiController extends Controller
 
         //mengambil data dari table pegawai sesuai key
         $pegawai = DB::table('pegawai')->where('nama','like',"%".$cari."%")->orWhere('id', 'like',"%".$cari."%")->orWhere('jabatan','like',"%".$cari."%")->paginate();
-
         //mengirim data ke view index
         return view('index', ['pegawai' =>$pegawai]);
     }
-
-
-
 
 
 

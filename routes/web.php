@@ -3,6 +3,7 @@
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\DosenController;
 use App\Http\Controllers\PegawaiController;
+use App\Http\Controllers\ValidateController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,9 +17,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 
 // Route::get('/beranda', function(){
 //     return view('beranda');
@@ -40,7 +41,7 @@ Route::get('/blog/tentang', [BlogController::class, 'tentang']);
 Route::get('/blog/kontak', [BlogController::class, 'kontak']);
 
 //menampilkan data dari database
-Route::get('/pegawai', [PegawaiController::class, 'index']);
+Route::get('/', [PegawaiController::class, 'index']);
 Route::get('/pegawai/tambah', [PegawaiController::class, 'tambah']);
 Route::get('/pegawai/edit/{id}', [PegawaiController::class, 'edit']);
 Route::get('/pegawai/hapus/{id}', [PegawaiController::class, 'hapus']);
@@ -50,3 +51,6 @@ Route::post('/pegawai/store', [PegawaiController::class, 'store']);
 Route::post('/pegawai/update', [PegawaiController::class, 'update']);
 //untuk proses cari data
 Route::get('/pegawai/cari', [PegawaiController::class, 'cari']);
+// //untuk validate input
+// Route::get('/input', [ValidateController::class], 'input');
+// Route::post('/proses', [ValidateController::class], 'proses' );

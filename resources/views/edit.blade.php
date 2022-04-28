@@ -15,8 +15,18 @@
             <div class="card-body">
 
 
-
     <h2>Edit DATA pegawai</h2>
+
+    @if (count($errors) > 0)
+    <div class="alert alert-danger">
+        <ul>
+            @foreach ($errors-all() as $err)
+                <li>{{ $err }}</li>
+
+            @endforeach
+        </ul>
+    </div>
+    @endif
 
     <br>
     <br>
@@ -33,7 +43,7 @@
         <input class="form-control" type="number" required name="umur" value="{{ $p->umur }}"><br>
         Alamat
         <input class="form-control" type="text" required name="alamat" value="{{ $p->alamat }}"><br>
-        <a class="btn btn-danger" href="/pegawai">Batal</a>
+        <a class="btn btn-danger" href="/">Batal</a>
         <input class="btn btn-primary" type="submit" value="Simpan">
 
     </form>

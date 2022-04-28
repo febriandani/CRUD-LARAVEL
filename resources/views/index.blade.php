@@ -21,18 +21,16 @@
     <div class="container">
         <div class="card">
             <div class="card-body">
-
-
     <h2>Data pegawai</h2>
     <!-- <a href="/pegawai/tambah"> + Tambah data baru</a> -->
+    <br>
+    <br>
     <div class="input-group mb-3">
 
   <a class="btn btn-outline-secondary" href="/pegawai/tambah">Tambah data baru</a>
 </div>
 
 
-    <br>
-    <br>
 
     <form action="/pegawai/cari" method="get" class="form-inline">
         <div class="input-group mb-3">
@@ -44,6 +42,7 @@
 
     <table class="table table-bordered">
         <tr>
+            <th>NO</th>
             <th>ID</th>
             <th>Nama</th>
             <th>Jabatan</th>
@@ -51,8 +50,12 @@
             <th>Alamat</th>
             <th colspan="2">Opsi</th>
         </tr>
+        @php
+            $no = 1;
+        @endphp
         @foreach ($pegawai as $p)
         <tr>
+            <td>{{ $no++ }}</td>
             <td>{{ $p->id }}</td>
             <td>{{ $p->nama }}</td>
             <td>{{ $p->jabatan }}</td>
@@ -63,6 +66,7 @@
         </tr>
 
         @endforeach
+
     </table>
 
     <br>
